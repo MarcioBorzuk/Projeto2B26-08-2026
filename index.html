@@ -8,16 +8,29 @@
 </head>
 <body>
 
+    <!-- Link para salto rápido (Acessibilidade) -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Barra de Acessibilidade -->
+    <div class="accessibility-bar">
+        <div class="accessibility-container">
+            <span>Acessibilidade:</span>
+            <button id="toggleContrast" aria-label="Alternar Alto Contraste">Alto Contraste 🌓</button>
+            <button id="increaseFont" aria-label="Aumentar Fonte">A+ Fonte</button>
+            <button id="decreaseFont" aria-label="Diminuir Fonte">A- Fonte</button>
+        </div>
+    </div>
+
     <header class="header">
         <div class="header-container">
             <div class="brand">
-                <img src="Logo Barbosa1.png" alt="Logo Colégio Estadual Barbosa Ferraz" class="logo">
+                <img src="Logo Barbosa1.png" alt="Logo do Colégio Estadual Barbosa Ferraz" class="logo">
                 <div>
                     <h1>Colégio Estadual Barbosa Ferraz</h1>
                     <p class="sub-title">Ivaiporã - PR | Projeto Integrador</p>
                 </div>
             </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">☰</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu de Navegação" aria-expanded="false">☰</button>
             <nav class="nav" id="navMenu">
                 <ul>
                     <li><a href="#inicio">Início</a></li>
@@ -30,7 +43,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
         
         <section id="inicio" class="hero">
             <h2>Olhos que Veem, Física que Explica</h2>
@@ -54,63 +67,88 @@
 
         <section id="etapas">
             <h2>Etapas do Projeto & Curiosidades</h2>
+            <p class="instruction-text"><em>Dica: Clique ou pressione Enter nas imagens para rotacioná-las!</em></p>
             
             <div class="grid">
 
-<!-- CARD 1 -->
-<div class="card card-with-img">
-    <img src="Implementação01.jpeg" alt="Anamnese e Hábitos Visuais" class="card-img" onclick="rotacionarImagem(this)">
-    <h3>1. Anamnese Visual</h3>
-    <p>Mapeamento dos hábitos visuais dos estudantes, uso de telas e histórico de consultas oftalmológicas[cite: 1].</p>
-    <small>Nota: Atividade educativa sem caráter de diagnóstico médico[cite: 1].</small>
-</div>
+                <!-- CARD 1 -->
+                <article class="card card-with-img">
+                    <div class="img-wrapper">
+                        <img src="Implementação01.jpeg" alt="Anamnese e Hábitos Visuais dos estudantes" class="card-img" tabindex="0" role="button" aria-label="Clique para girar a imagem de Anamnese Visual">
+                    </div>
+                    <div class="card-content">
+                        <h3>1. Anamnese Visual</h3>
+                        <p>Mapeamento dos hábitos visuais dos estudantes, uso de telas e histórico de consultas oftalmológicas.</p>
+                        <small>Nota: Atividade educativa sem caráter de diagnóstico médico.</small>
+                    </div>
+                </article>
 
                 <!-- CARD 2 -->
-                <div class="card card-with-img">
-                    <img src="Implementação06.jpeg" alt="Tabela de Snellen e Acuidade Visual" class="card-img">
-                    <h3>2. Acuidade Visual & Tabela de Snellen</h3>
-                    <p>Estudo do tamanho angular e distância. Descubra o significado do padrão 20/20!</p>
-                    <blockquote class="curiosity">
-                        <strong>Curiosidade:</strong> Visão 20/20 indica que você enxerga a 20 pés (aprox. 6 metros) o que uma pessoa com visão padrão deveria enxergar a essa distância.
-                    </blockquote>
-                </div>
+                <article class="card card-with-img">
+                    <div class="img-wrapper">
+                        <img src="Implementação06.jpeg" alt="Tabela de Snellen para teste de Acuidade Visual" class="card-img" tabindex="0" role="button" aria-label="Clique para girar a imagem da Tabela de Snellen">
+                    </div>
+                    <div class="card-content">
+                        <h3>2. Acuidade Visual & Tabela de Snellen</h3>
+                        <p>Estudo do tamanho angular e distância. Descubra o significado do padrão 20/20!</p>
+                        <blockquote class="curiosity">
+                            <strong>Curiosidade:</strong> Visão 20/20 indica que você enxerga a 20 pés (aprox. 6 metros) o que uma pessoa com visão padrão deveria enxergar a essa distância.
+                        </blockquote>
+                    </div>
+                </article>
 
                 <!-- CARD 3 -->
-                <div class="card card-with-img">
-                    <img src="Implementação14.jpeg" alt="Experimentos de Refração da Luz" class="card-img">
-                    <h3>3. Refração e Lentes</h3>
-                    <p>Experimentos práticos com lápis na água, prismas e desvio da luz.</p>
-                    <blockquote class="curiosity">
-                        <strong>Curiosidade:</strong> A ilusão do lápis "quebrado" no copo d'água ocorre porque a luz muda de velocidade ao passar do ar para a água!
-                    </blockquote>
-                </div>
+                <article class="card card-with-img">
+                    <div class="img-wrapper">
+                        <img src="Implementação14.jpeg" alt="Experimentos práticos de Refração da Luz" class="card-img" tabindex="0" role="button" aria-label="Clique para girar a imagem de Refração e Lentes">
+                    </div>
+                    <div class="card-content">
+                        <h3>3. Refração e Lentes</h3>
+                        <p>Experimentos práticos com lápis na água, prismas e desvio da luz.</p>
+                        <blockquote class="curiosity">
+                            <strong>Curiosidade:</strong> A ilusão do lápis "quebrado" no copo d'água ocorre porque a luz muda de velocidade ao passar do ar para a água!
+                        </blockquote>
+                    </div>
+                </article>
 
                 <!-- CARD 4 -->
-                <div class="card card-with-img">
-                    <img src="Implementação04.jpeg" alt="Exemplo de Ilusão de Óptica" class="card-img">
-                    <h3>4. Ilusões de Óptica</h3>
-                    <p>Análise de figuras ambíguas e imagens em movimento. Por que o cérebro interpreta diferente do que o olho capta?</p>
-                </div>
+                <article class="card card-with-img">
+                    <div class="img-wrapper">
+                        <img src="Implementação04.jpeg" alt="Exemplo prático de Ilusão de Óptica" class="card-img" tabindex="0" role="button" aria-label="Clique para girar a imagem de Ilusões de Óptica">
+                    </div>
+                    <div class="card-content">
+                        <h3>4. Ilusões de Óptica</h3>
+                        <p>Análise de figuras ambíguas e imagens em movimento. Por que o cérebro interpreta diferente do que o olho capta?</p>
+                    </div>
+                </article>
 
                 <!-- CARD 5 -->
-                <div class="card card-with-img">
-                    <img src="Implementação15.jpeg" alt="Percepção das Cores e Disco de Newton" class="card-img">
-                    <h3>5. "Qual é a Cor?"</h3>
-                    <p>Experimentos com o Disco de Newton, decomposição da luz branca e filtros de cor.</p>
-                    <blockquote class="curiosity">
-                        <strong>Curiosidade:</strong> Um objeto vermelho não "possui" a cor vermelha em si; ele reflete a luz vermelha e absorve as demais cores da iluminação!
-                    </blockquote>
-                </div>
+                <article class="card card-with-img">
+                    <div class="img-wrapper">
+                        <img src="Implementação15.jpeg" alt="Experimentos com o Disco de Newton e percepção das cores" class="card-img" tabindex="0" role="button" aria-label="Clique para girar a imagem sobre Percepção das Cores">
+                    </div>
+                    <div class="card-content">
+                        <h3>5. "Qual é a Cor?"</h3>
+                        <p>Experimentos com o Disco de Newton, decomposição da luz branca e filtros de cor.</p>
+                        <blockquote class="curiosity">
+                            <strong>Curiosidade:</strong> Um objeto vermelho não "possui" a cor vermelha em si; ele reflete a luz vermelha e absorve as demais cores da iluminação!
+                        </blockquote>
+                    </div>
+                </article>
 
                 <!-- CARD 6 -->
-                <div class="card card-with-img">
-                    <img src="Implementação16.jpeg" alt="Semáforo Inteligente" class="card-img">
-                    <h3>6. "Semáforo Inteligente"</h3>
-                    <p>Simulador de Robótica - Tinkercad</p>
-                    <blockquote class="curiosity">
-                        <strong>Curiosidade:</strong> Simulador que agiliza o produto final!
-                    </blockquote>
-                </div>
+                <article class="card card-with-img">
+                    <div class="img-wrapper">
+                        <img src="Implementação16.jpeg" alt="Simulador de Robótica no Tinkercad para o Semáforo Inteligente" class="card-img" tabindex="0" role="button" aria-label="Clique para girar a imagem do Semáforo Inteligente">
+                    </div>
+                    <div class="card-content">
+                        <h3>6. "Semáforo Inteligente"</h3>
+                        <p>Simulador de Robótica - Tinkercad</p>
+                        <blockquote class="curiosity">
+                            <strong>Curiosidade:</strong> Simulador que agiliza a prototipagem do produto final!
+                        </blockquote>
+                    </div>
+                </article>
 
             </div>
         </section>
@@ -119,13 +157,13 @@
             <h2>Desafio de Percepção: Efeito Stroop</h2>
             <p>Tente dizer a <strong>COR DAS LETRAS</strong> em voz alta (e não o texto escrito) o mais rápido que puder:</p>
             
-            <div class="stroop-grid">
-                <span style="color: red;">AMARELO</span>
-                <span style="color: blue;">VERDE</span>
-                <span style="color: orange;">PRETO</span>
-                <span style="color: green;">ROXO</span>
-                <span style="color: purple;">AZUL</span>
-                <span style="color: yellow; background: #333; padding: 2px 5px; border-radius: 4px;">VERMELHO</span>
+            <div class="stroop-grid" aria-label="Grid do Desafio Stroop">
+                <span style="color: #e53e3e;">AMARELO</span>
+                <span style="color: #3182ce;">VERDE</span>
+                <span style="color: #dd6b20;">PRETO</span>
+                <span style="color: #38a169;">ROXO</span>
+                <span style="color: #805ad5;">AZUL</span>
+                <span class="stroop-dark-bg" style="color: #ecc94b;">VERMELHO</span>
             </div>
             <p class="note">O cérebro tende a ler a palavra antes de identificar a cor do texto, gerando uma competição cognitiva!</p>
         </section>
