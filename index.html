@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olhos que Veem, Física que Explica - Colégio Barbosa Ferraz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="brand">
+                <img src="Logo Barbosa1.png" alt="Logo Colégio Estadual Barbosa Ferraz" class="logo">
+                <div>
+                    <h1>Colégio Estadual Barbosa Ferraz</h1>
+                    <p class="sub-title">Ivaiporã - PR | Projeto Integrador</p>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">☰</button>
+            <nav class="nav" id="navMenu">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#projeto">O Projeto</a></li>
+                    <li><a href="#etapas">Etapas & Curiosidades</a></li>
+                    <li><a href="#desafio">Desafio Visual</a></li>
+                    <li><a href="#professores">Professores</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="inicio" class="hero">
+            <h2>Olhos que Veem, Física que Explica</h2>
+            <p>Uma investigação interdisciplinar sobre visão, luz e percepção humana.</p>
+        </section>
+
+        <section id="projeto" class="card">
+            <h2>Sobre o Projeto</h2>
+            <p>O projeto investiga a relação entre os fenômenos da Física, o funcionamento do olho humano e o processamento da percepção pelo cérebro. Pretende compreender a propagação e refração da luz, acuidade visual, cores e ilusões de óptica presentes no cotidiano.</p>
+            
+            <div class="objectives">
+                <h3>Objetivos Principais</h3>
+                <ul>
+                    <li>Compreender a importância da luz na formação de imagens.</li>
+                    <li>Investigar o funcionamento do olho, córnea, cristalino e retina.</li>
+                    <li>Relacionar a refração da luz às lentes corretivas (miopia, hipermetropia, astigmatismo).</li>
+                    <li>Analisar como o cérebro processa cores e interpreta ilusões ópticas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="etapas">
+            <h2>Etapas do Projeto & Curiosidades</h2>
+            
+            <div class="grid">
+
+<!-- CARD 1 -->
+<div class="card card-with-img">
+    <img src="Implementação01.jpeg" alt="Anamnese e Hábitos Visuais" class="card-img" onclick="rotacionarImagem(this)">
+    <h3>1. Anamnese Visual</h3>
+    <p>Mapeamento dos hábitos visuais dos estudantes, uso de telas e histórico de consultas oftalmológicas[cite: 1].</p>
+    <small>Nota: Atividade educativa sem caráter de diagnóstico médico[cite: 1].</small>
+</div>
+
+                <!-- CARD 2 -->
+                <div class="card card-with-img">
+                    <img src="Implementação06.jpeg" alt="Tabela de Snellen e Acuidade Visual" class="card-img">
+                    <h3>2. Acuidade Visual & Tabela de Snellen</h3>
+                    <p>Estudo do tamanho angular e distância. Descubra o significado do padrão 20/20!</p>
+                    <blockquote class="curiosity">
+                        <strong>Curiosidade:</strong> Visão 20/20 indica que você enxerga a 20 pés (aprox. 6 metros) o que uma pessoa com visão padrão deveria enxergar a essa distância.
+                    </blockquote>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="card card-with-img">
+                    <img src="Implementação14.jpeg" alt="Experimentos de Refração da Luz" class="card-img">
+                    <h3>3. Refração e Lentes</h3>
+                    <p>Experimentos práticos com lápis na água, prismas e desvio da luz.</p>
+                    <blockquote class="curiosity">
+                        <strong>Curiosidade:</strong> A ilusão do lápis "quebrado" no copo d'água ocorre porque a luz muda de velocidade ao passar do ar para a água!
+                    </blockquote>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="card card-with-img">
+                    <img src="Implementação04.jpeg" alt="Exemplo de Ilusão de Óptica" class="card-img">
+                    <h3>4. Ilusões de Óptica</h3>
+                    <p>Análise de figuras ambíguas e imagens em movimento. Por que o cérebro interpreta diferente do que o olho capta?</p>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="card card-with-img">
+                    <img src="Implementação15.jpeg" alt="Percepção das Cores e Disco de Newton" class="card-img">
+                    <h3>5. "Qual é a Cor?"</h3>
+                    <p>Experimentos com o Disco de Newton, decomposição da luz branca e filtros de cor.</p>
+                    <blockquote class="curiosity">
+                        <strong>Curiosidade:</strong> Um objeto vermelho não "possui" a cor vermelha em si; ele reflete a luz vermelha e absorve as demais cores da iluminação!
+                    </blockquote>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="card card-with-img">
+                    <img src="Implementação16.jpeg" alt="Semáforo Inteligente" class="card-img">
+                    <h3>6. "Semáforo Inteligente"</h3>
+                    <p>Simulador de Robótica - Tinkercad</p>
+                    <blockquote class="curiosity">
+                        <strong>Curiosidade:</strong> Simulador que agiliza o produto final!
+                    </blockquote>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="desafio" class="card highlight">
+            <h2>Desafio de Percepção: Efeito Stroop</h2>
+            <p>Tente dizer a <strong>COR DAS LETRAS</strong> em voz alta (e não o texto escrito) o mais rápido que puder:</p>
+            
+            <div class="stroop-grid">
+                <span style="color: red;">AMARELO</span>
+                <span style="color: blue;">VERDE</span>
+                <span style="color: orange;">PRETO</span>
+                <span style="color: green;">ROXO</span>
+                <span style="color: purple;">AZUL</span>
+                <span style="color: yellow; background: #333; padding: 2px 5px; border-radius: 4px;">VERMELHO</span>
+            </div>
+            <p class="note">O cérebro tende a ler a palavra antes de identificar a cor do texto, gerando uma competição cognitiva!</p>
+        </section>
+
+        <section id="professores" class="card">
+            <h2>Corpo Docente Responsável</h2>
+            <ul class="prof-list">
+                <li><strong>Professor de Programação:</strong> Prof. Marcio Borzuk</li>
+                <li><strong>Professora de Física e Tecnociência:</strong> Prof. Judith</li>
+                <li><strong>Professor de Robótica:</strong> Prof. Kleber</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; Colégio Estadual Barbosa Ferraz - Ivaiporã/PR</p>
+        <p>Projeto Integrador: Olhos que Veem, Física que Explica</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
