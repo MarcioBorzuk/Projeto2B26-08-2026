@@ -1,20 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Menu Responsivo Toggle
+    // 1. Alternar Menu Responsivo
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            const isActive = navMenu.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isActive);
         });
     }
 
     // 2. Fechar menu mobile ao clicar em um link
     document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', () => {
-            if (navMenu) {
+            if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
             }
         });
     });
@@ -33,22 +35,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Efeito de rotação nas imagens ao clicar
+    // 4. Efeito de rotação nas imagens dos Cards ao clicar ou interagir via Teclado
     const cardImages = document.querySelectorAll('.card-img');
 
+    function acionarRotacao(img) {
+        if (img.classList.contains('rotate-effect')) return;
+
+        img.classList.add('rotate-effect');
+
+        // Remove a classe após o tempo da transição no CSS (800ms)
+        setTimeout(() => {
+            img.classList.remove('rotate-effect');
+        }, 800);
+    }
+
     cardImages.forEach(img => {
-        img.addEventListener('click', () => {
-            // Evita cliques seguidos durante a animação
-            if (img.classList.contains('rotate-effect')) return;
+        // Clique do mouse
+        img.addEventListener('click', () => acionarRotacao(img));
 
-            // Adiciona a classe que executa a rotação no CSS
-            img.classList.add('rotate-effect');
-
-            // Remove a classe após 600ms para permitir novos giros
-            setTimeout(() => {
-                img.classList.remove('rotate-effect');
-            }, 600);
+        // Acionamento por teclado (Enter ou Espaço para Acessibilidade)
+        img.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                acionarRotacao(img);
+            }
         });
     });
 
+    // 5. Recursos de Acessibilidade (Alto Contraste e Tamanho de Fonte)
+    const toggleContrast = document.getElementById('toggleContrast');
+    const increaseFont = document.getElementById('increaseFont');
+    const decreaseFont = document.getElementById('decreaseFont');
+    let fontFactor = 100;
+
+    if (toggleContrast) {
+        toggleContrast.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast');
+        });
+    }
+
+    if (increaseFont && decreaseFont) {
+        increaseFont.addEventListener('click', () => {
+            if (fontFactor < 130) {
+                fontFactor += 10;
+                document.body.style.fontSize = `${fontFactor}%`;
+            }
+        });
+
+        decreaseFont.addEventListener('click', () => {
+            if (fontFactor > 90) {
+                fontFactor -= 10;
+                document.body.style.fontSize = `${fontFactor}%`;
+            }
+        });
+    }
 });
